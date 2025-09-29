@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Reviewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Reviewer</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <label for="resume">Upload Resume (PDF):</label><br>
+            <input type="file" name="resume" accept="application/pdf" required><br><br>
+
+            <label for="job_desc">Job Description:</label><br>
+            <textarea name="job_desc" rows="6" cols="60" required></textarea><br><br>
+
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if score %}
+        <div class="result">
+            <h2>Resume-Job Match Score: {{ score }}</h2>
+            <h3>Review:</h3>
+            <pre>{{ review }}</pre>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <p style="color:red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
