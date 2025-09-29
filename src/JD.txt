@@ -1,0 +1,30 @@
+Job Title: Java Developer
+
+Job Role:
+We are looking for an experienced Java Developer who can design, develop, and maintain high-quality applications. The ideal candidate should have strong expertise in Java frameworks, databases, and scalable system design.
+
+Responsibilities:
+
+* Develop, test, and maintain Java-based applications.
+* Write clean, efficient, and maintainable code.
+* Troubleshoot, debug, and optimize existing applications.
+* Work closely with product managers, designers, and QA teams.
+* Ensure application performance, security, and scalability.
+
+Required Skills:
+
+* Strong proficiency in Java 8+ and OOP principles.
+* Hands-on experience with Spring Boot and REST APIs.
+* Good understanding of databases (MySQL, PostgreSQL, MongoDB).
+* Familiarity with version control (Git).
+* Knowledge of build tools (Maven/Gradle).
+* Strong problem-solving and debugging skills.
+
+Preferred Skills (Good to Have):
+
+* Experience with cloud technologies (AWS, GCP, Azure).
+* Knowledge of containerization tools (Docker, Kubernetes).
+* Exposure to frontend frameworks (React, Angular, Vue.js).
+
+Education:
+Bachelor’s or Master’s degree in Computer Science, Information Technology, or related field.
