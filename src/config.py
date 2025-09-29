@@ -1,0 +1,4 @@
+# Store your API keys here
+
+HF_API_KEY = "YOUR_HF_API_KEY"
+GROQ_API_KEY = "YOUR_GROQ_API_KEY"
