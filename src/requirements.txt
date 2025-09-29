@@ -1,0 +1,4 @@
+pdfplumber
+numpy
+huggingface-hub
+groq
