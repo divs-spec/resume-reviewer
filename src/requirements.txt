@@ -1,3 +1,4 @@
+flask
 pdfplumber
 numpy
 huggingface-hub
