@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 import pdfplumber
 import numpy as np
 from numpy import dot
@@ -6,8 +6,10 @@ from numpy.linalg import norm
 from huggingface_hub import InferenceClient
 from groq import Groq
 from config import HF_API_KEY, GROQ_API_KEY
+import os
 
 app = Flask(__name__)
+OUTPUT_FILE = "review_report.txt"
 
 # ---------------------------
 # Utility: Load Resume Text
@@ -83,9 +85,20 @@ def index():
         score = compute_similarity(resume_text, job_desc, hf_client)
         review = generate_review(groq_client, resume_text, job_desc, score)
 
-        return render_template("index.html", score=f"{score:.2f}", review=review)
+        # Save report as TXT
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            f.write("Resume Review Report\n")
+            f.write("="*40 + "\n\n")
+            f.write(f"Resume-Job Match Score: {score:.2f}\n\n")
+            f.write(review)
+
+        return render_template("index.html", score=f"{score:.2f}", review=review, download=True)
 
     return render_template("index.html")
+
+@app.route("/download")
+def download():
+    return send_file(OUTPUT_FILE, as_attachment=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
